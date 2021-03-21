@@ -1,7 +1,7 @@
 {
-  "port": 5000,
+  "port": 80,
   "jwtSecret": "b4rb13secret",
   "mongoUri": "mongodb+srv://b4rb13:684736barbie@cluster0.ryx4l.mongodb.net/exam?retryWrites=true&w=majority",
-  "baseUrl": "http://localhost:5000"
+  "baseUrl": "http://js-exam.info"
 
 }

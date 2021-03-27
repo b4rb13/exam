@@ -1,24 +1,24 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import LinksPage from "./pages/LinksPage";
-import CreatePage from "./pages/CreatePage";
-import DetailPage from "./pages/DetailPage";
+import ExamPage from "./pages/ExamPage";
+// import CreatePage from "./pages/CreatePage";
+// import DetailPage from "./pages/DetailPage";
 import AuthPage from "./pages/AuthPage";
 
 export const useRoutes = (isAuth) => {
   if (isAuth) {
     return (
       <Switch>
-        <Route path={"/links"} exact>
-          <LinksPage />
+        <Route path={"/exam"} exact>
+          <ExamPage />
         </Route>
-        <Route path={"/create"} exact>
-          <CreatePage />
-        </Route>
-        <Route path={"/detail/:id"} exact>
-          <DetailPage />
-        </Route>
-        <Redirect to={"/create"} />
+        {/*<Route path={"/create"} exact>*/}
+        {/*  <CreatePage />*/}
+        {/*</Route>*/}
+        {/*<Route path={"/detail/:id"} exact>*/}
+        {/*  <DetailPage />*/}
+        {/*</Route>*/}
+        <Redirect to={"/exam"} />
       </Switch>
     );
   }

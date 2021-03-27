@@ -11,9 +11,11 @@ router.post(
   [
     check("email", "wrong email").isEmail(),
     check("password", "wrong password").isLength({ min: 6 }),
+    check("name", "Name can not be empty").isLength({ min: 3 }),
   ],
 
   async (req, res) => {
+    console.log(987987987)
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -23,7 +25,7 @@ router.post(
         });
       }
 
-      const { email, password } = req.body;
+      const { email, password, name } = req.body;
 
       const candidate = await User.findOne({ email });
       if (candidate) {
@@ -33,7 +35,7 @@ router.post(
       }
 
       const hashedPass = await bcrypt.hash(password, 12);
-      const user = new User({ email, password: hashedPass });
+      const user = new User({ email, name, password: hashedPass });
 
       await user.save();
 

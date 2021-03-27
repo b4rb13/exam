@@ -10,7 +10,11 @@ const schema = new Schema({
     type: String,
     required: true,
   },
-  links: [{ type: Types.ObjectId, ref: "Link" }],
+  name: {
+    type: String,
+    required: true,
+  },
+  answers: [{ type: Types.ObjectId, ref: "Answers" }],
 });
 
 module.exports = model("User", schema);

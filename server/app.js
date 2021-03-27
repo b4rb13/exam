@@ -12,8 +12,8 @@ app.use(
 );
 
 app.use("/api/auth", require("./routes/auth.routes"));
-app.use("/api/link", require("./routes/link.routes"));
-app.use("/t", require("./routes/redirect.routes"));
+app.use("/api/answers", require("./routes/questions.routes"));
+// app.use("/t", require("./routes/redirect.routes"));
 
 if (process.env.NODE_ENV === "production") {
   app.use("/", express.static(path.join(__dirname, "client", "build")));
@@ -41,3 +41,4 @@ async function start() {
 }
 
 start();
+
